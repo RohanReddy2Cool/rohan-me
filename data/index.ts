@@ -1,9 +1,13 @@
 export const navbarData = {
-  homeTitle: 'Riyad\'s Blog',
+  homeTitle: 'Rohan\'s Blog',
+}
+
+export const headData = {
+  description: 'Welcome To My Blog Site. Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles, Tips, Learning resources and more.',
 }
 
 export const footerData = {
-  author: 'Al Asad Nur Riyad',
+  author: 'Rohan Reddy',
   aboutAuthor: 'Hi! I am Riyad, a Tech enthusiast, problem solver and software engineer. Currently working at Appscode Inc.',
   authorInterest: 'I have a fair amount of knowledge of Javascript, Typescript, VueJs, and Nuxt. If you have an interesting idea, either open source or paid let\'s connect.',
   aboutTheSite: 'This is a personal blog site built with Nuxt3, TailwindCSS, NuxtContent, Nuxt Icon. Currently it\'s deployed in Vercel.',
@@ -35,9 +39,15 @@ export const seoData = {
   ogTitle: 'Riyad codes and helps others learn Javascript, Typescript, Vue, Nuxt, & Problem Solving',
   twitterDescription: 'My blog website, where I play around with Nuxt, Vue, and more and showcase my blog, resources, etc',
   image: 'https://res.cloudinary.com/dmecmyphj/image/upload/v1673548905/nuxt-blog/cover_ntgs6u.webp',
-  mySite: 'https://blog-nurriyad.vercel.app',
-  twitterHandle: '@qdnvubp',
-  mailAddress: 'asadnurriyad@gmail.com',
+  mySite: 'https://rohanr.me',
+  twitterHandle: '@nobody',
+  mailAddress: 'rohanreddy2cool@gmail.com',
+}
+
+export const linksData = {
+  github: 'https://github.com/RohanReddy2Cool',
+  linkedin: 'https://www.linkedin.com/in/',
+  twitter: 'https://twitter.com/',
 }
 
 export const siteMetaData = [

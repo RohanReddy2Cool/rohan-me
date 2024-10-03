@@ -1,4 +1,5 @@
 import { navbarData, seoData } from './data'
+const path = require('path');
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({

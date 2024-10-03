@@ -15,7 +15,7 @@ defineOgImageComponent('About', {
   headline: 'Greetings 👋',
   title: navbarData.homeTitle,
   description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
-  link: '/riyad.jpg',
+  link: '/rohan.jpeg',
 })
 </script>
 
@@ -54,21 +54,13 @@ defineOgImageComponent('About', {
               >
                 <Icon name="fa:twitter-square" size="1em" />
               </NuxtLink>
-              <NuxtLink
-                to="https://stackoverflow.com/users/16781395/nur-riyad"
-                target="_blank"
-                class="px-2 py-1 lg:px-3 lg:py-2 bg-gray-300 text-gray-800 rounded-md dark:bg-slate-700 dark:text-[#F1F2F4]"
-                aria-label="StackOverflow"
-              >
-                <Icon name="fa:stack-overflow" size="1em" />
-              </NuxtLink>
             </div>
           </div>
           <div class="sm:hidden block col-span-3 pb-5 dark:text-[#F1F2F4]">
             <NuxtImg
-              src="/riyad.jpg"
-              width="125"
-              height="115"
+              src="/rohan.jpeg"
+              width="150"
+              height="200"
               quality="50"
               class="rounded-md"
             />
@@ -82,9 +74,9 @@ defineOgImageComponent('About', {
       </div>
       <div class="hidden sm:block col-span-3">
         <NuxtImg
-          src="/riyad.jpg"
+          src="/rohan.jpeg"
           width="450"
-          height="500"
+          height="600"
           quality="50"
           class="rounded-md"
         />

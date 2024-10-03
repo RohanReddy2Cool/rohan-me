@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { headData } from '~/data'
+
 // Get Last 6 Publish Post from the content/blog directory
 const { data } = await useAsyncData('recent-post', () =>
   queryContent('/blogs').limit(3).sort({ _id: -1 }).find(),
@@ -25,8 +27,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content:
-        'Welcome To My Blog Site. Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles, Tips, Learning resources and more.',
+      content: headData.description,
     },
   ],
 })
@@ -44,6 +45,7 @@ useHead({
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <template v-for="post in formattedData" :key="post.title">
         <BlogCard
+          v-if="post.path"
           :path="post.path"
           :title="post.title"
           :date="post.date"
