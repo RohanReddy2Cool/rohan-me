@@ -1,17 +1,17 @@
 
 ## Build Setup
 
-**Requires Node.js 16+**
+**Requires Node.js 22+**
 
 ```bash
 # install dependencies
 npm install
 
-# serve in dev mode, with hot reload at localhost:5173
+# serve in dev mode, with hot reload
 npm run dev
 
 # build for production
-npm run build
+npm run generate
 
 # serve in production mode
 npm run  preview

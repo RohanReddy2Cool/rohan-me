@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { footerData } from '~/data'
+import { footerData, linksData } from '~/data'
 </script>
 
 <template>
@@ -12,7 +12,7 @@ import { footerData } from '~/data'
     </p>
     <div class="my-3 space-x-3 pb-3">
       <NuxtLink
-        to="https://github.com/RohanReddy2Cool"
+        :to="linksData.github"
         target="_blank"
         class="p-2 bg-gray-300 text-gray-800 rounded-md dark:bg-sky-700 dark:text-[#F1F2F4]"
         aria-label="Github"
@@ -20,20 +20,12 @@ import { footerData } from '~/data'
         <Icon name="fa:github" size="1em" />
       </NuxtLink>
       <!--NuxtLink
-        to="https://www.linkedin.com/in/"
+        :to="linksData.linkedin"
         target="_blank"
         class="p-2 bg-gray-300 text-gray-800 rounded-md dark:bg-sky-700 dark:text-[#F1F2F4]"
         aria-label="LinkedIn"
       >
         <Icon name="fa:linkedin-square" size="1em" />
-      </NuxtLink-->
-      <!--NuxtLink
-        to="https://twitter.com/"
-        target="_blank"
-        class="p-2 bg-gray-300 text-gray-800 rounded-md dark:bg-sky-700 dark:text-[#F1F2F4]"
-        aria-label="Twitter"
-      >
-        <Icon name="fa:twitter-square" size="1em" />
       </NuxtLink-->
     </div>
   </div>

@@ -1,4 +1,4 @@
-import { navbarData, seoData } from './data'
+import { navbarData, linksData } from './data'
 const path = require('path');
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -19,11 +19,10 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: seoData.mySite,
+    url: linksData.mySite,
     identity: {
       type: 'Person',
     },
-    twitter: seoData.twitterHandle,
   },
 
   typescript: {

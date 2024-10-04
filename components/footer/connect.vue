@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { footerData, seoData } from '~/data'
+import { footerData, linksData } from '~/data'
 </script>
 
 <template>
@@ -12,7 +12,7 @@ import { footerData, seoData } from '~/data'
     </p>
 
     <a
-      :href="`mailto: ${seoData.mailAddress}`"
+      :href="`mailto: ${linksData.mailAddress}`"
       class="block text-center w-full bg-sky-700 p-2 rounded-lg text-[#F1F2F4]  mt-3 text-sm"
     >
       Sent Mail

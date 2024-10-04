@@ -1,23 +1,22 @@
 import { Feed } from 'feed'
 import { serverQueryContent } from '#content/server'
-
-const basePath = 'https://nurriyad.xyz'
+import { myData, linksData } from '~/data'
 
 export default defineEventHandler(async (event) => {
   setHeader(event, 'content-type', 'text/xml')
   const docs = await serverQueryContent(event).sort({ date: -1 }).find()
   const feed = new Feed({
-    title: 'Riyad\'s personal blog site',
-    description: 'Riyad\'s personal blog site',
-    id: basePath,
-    link: basePath,
+    title: myData.title,
+    description: myData.description,
+    id: linksData.mySite,
+    link: linksData.mySite,
     language: 'en',
-    favicon: `${basePath}/favicon.ico`,
+    favicon: `${linksData.mySite}/favicon.ico`,
     copyright: 'MIT',
     author: {
-      name: 'Al Asad Nur Riyad',
-      email: 'asadnurriyad@gmail.com',
-      link: basePath,
+      name: myData.fullName,
+      email: linksData.mailAddress,
+      link: linksData.mySite,
     },
   })
 
@@ -25,8 +24,8 @@ export default defineEventHandler(async (event) => {
   docs.forEach((doc) => {
     feed.addItem({
       title: doc.title || '',
-      id: basePath + doc._path,
-      link: basePath + doc._path,
+      id: linksData.mySite + doc._path,
+      link: linksData.mySite + doc._path,
       description: doc.description,
       content: doc.description,
       date: new Date(doc.date),

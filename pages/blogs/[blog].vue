@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { BlogPost } from '@/types/blog'
-import { navbarData, seoData } from '~/data'
+import { navbarData, linksData } from '~/data'
 
 const { path } = useRoute()
 
@@ -35,7 +35,7 @@ useHead({
     { hid: 'og:type', property: 'og:type', content: 'website' },
     {
       property: 'og:url',
-      content: `${seoData.mySite}/${path}`,
+      content: `${linksData.mySite}/${path}`,
     },
     {
       property: 'og:title',
@@ -54,7 +54,7 @@ useHead({
     { name: 'twitter:card', content: 'summary_large_image' },
     {
       name: 'twitter:url',
-      content: `${seoData.mySite}/${path}`,
+      content: `${linksData.mySite}/${path}`,
     },
     {
       name: 'twitter:title',
@@ -72,7 +72,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: `${seoData.mySite}/${path}`,
+      href: `${linksData.mySite}/${path}`,
     },
   ],
 })

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { aboutPage, footerData, navbarData } from '~/data'
+import { aboutPage, footerData, navbarData, linksData } from '~/data'
 
 useHead({
   title: 'About',
@@ -31,29 +31,21 @@ defineOgImageComponent('About', {
 
             <div class="my-3 space-x-2 md:space-x-3 pb-10">
               <NuxtLink
-                to="https://github.com/nurRiyad"
+                :to="linksData.github"
                 target="_blank"
                 class="px-2 py-1 lg:px-3 lg:py-2 bg-gray-300 text-gray-800 rounded-md dark:bg-slate-700 dark:text-[#F1F2F4]"
                 aria-label="Github"
               >
                 <Icon name="fa:github" size="1em" />
               </NuxtLink>
-              <NuxtLink
-                to="https://www.linkedin.com/in/nur-riyad/"
+              <!--NuxtLink
+                :to="linksData.linkedin"
                 target="_blank"
                 class="px-2 py-1 lg:px-3 lg:py-2 bg-gray-300 text-gray-800 rounded-md dark:bg-slate-700 dark:text-[#F1F2F4]"
                 aria-label="LinkedIn"
               >
                 <Icon name="fa:linkedin-square" size="1em" />
-              </NuxtLink>
-              <NuxtLink
-                to="https://twitter.com/qdnvubp"
-                target="_blank"
-                class="px-2 py-1 lg:px-3 lg:py-2 bg-gray-300 text-gray-800 rounded-md dark:bg-slate-700 dark:text-[#F1F2F4]"
-                aria-label="Twitter"
-              >
-                <Icon name="fa:twitter-square" size="1em" />
-              </NuxtLink>
+              </NuxtLink-->
             </div>
           </div>
           <div class="sm:hidden block col-span-3 pb-5 dark:text-[#F1F2F4]">
