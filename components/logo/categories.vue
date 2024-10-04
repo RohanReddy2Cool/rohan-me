@@ -67,44 +67,5 @@
       </g>
     </g>
   </switch>
-  <metadata>
-    <rdf:RDF>
-      <cc:Work>
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
-        <dc:publisher>
-          <cc:Agent rdf:about="http://openclipart.org/">
-            <dc:title>Openclipart</dc:title>
-          </cc:Agent>
-        </dc:publisher>
-        <dc:title>Golf Decoration</dc:title>
-        <dc:date>2007-11-26T21:18:45</dc:date>
-        <dc:description>ball, clip art, clipart, club, flag, golf, sport, </dc:description>
-        <dc:source>http://openclipart.org/detail/9167/golf-decoration-by-gerald_g-9167</dc:source>
-        <dc:creator>
-          <cc:Agent>
-            <dc:title>Gerald_G</dc:title>
-          </cc:Agent>
-        </dc:creator>
-        <dc:subject>
-          <rdf:Bag>
-            <rdf:li>ball</rdf:li>
-            <rdf:li>clip art</rdf:li>
-            <rdf:li>clipart</rdf:li>
-            <rdf:li>club</rdf:li>
-            <rdf:li>flag</rdf:li>
-            <rdf:li>golf</rdf:li>
-            <rdf:li>sport</rdf:li>
-          </rdf:Bag>
-        </dc:subject>
-      </cc:Work>
-      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
-        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
-        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
-        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
-      </cc:License>
-    </rdf:RDF>
-  </metadata>
 </svg>
 </template>

@@ -38,7 +38,7 @@ export const categoryPage = {
 export const aboutPage = {
   title: 'Rohan R. Reddy',
   description: 'Middle schooler with interest in Robotics and Golf.',
-  aboutMe: 'Hello! I\'m a middle schooler who spends most of his time outside school finishing books in the AOPS set. My current target is to finish APOS Calculus by the end of 8th grade. Apparently that is when fun starts as you use Calculus in physics and modelling systems. When I\'m not solving problems, you can find me resting or playing golf with my dad.'
+  aboutMe: 'Hello! I\'m a middle schooler who spends most of his time outside school finishing books in the AOPS set. My current target is to finish AOPS Calculus by the end of 8th grade. Apparently that is when fun starts as you use Calculus in physics and modelling systems. When I\'m not solving problems, you can find me resting or playing golf with my dad.'
 }
 
 export const linksData = {

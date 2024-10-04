@@ -18,6 +18,11 @@ npm run  preview
 
 ```
 
+## Deploy to production
+```
+npm run  deploy
+```
+
 ## Resources
 ### Images
 * https://www.svgrepo.com/

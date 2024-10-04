@@ -63,6 +63,20 @@ export default defineNuxtConfig({
     highlight: {
       theme: 'dracula',
     },
+    markdown: {
+      remarkPlugins: {
+        'remark-math': {
+          singleDollarTextMath: false,
+        }
+      },
+      rehypePlugins: {
+        'rehype-mathjax/chtml' : {
+          chtml: {
+            fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2'
+          },
+        },
+      },
+    },
   },
 
   compatibilityDate: '2024-09-30',
