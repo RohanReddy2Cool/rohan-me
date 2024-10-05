@@ -1,4 +1,3 @@
-
 ## Build Setup
 
 **Requires Node.js 22+**
@@ -16,11 +15,17 @@ npm run generate
 # serve in production mode
 npm run  preview
 
+# locally clean the build artifacts
+npm run  clean
+
 ```
+
+Successful builds from main branch are deployed to: https://main.rohan-me.pages.dev/
+
 
 ## Deploy to production
 ```
-npm run  deploy
+npm run deploy
 ```
 
 ## Resources
@@ -30,3 +35,8 @@ npm run  deploy
 * https://commons.wikimedia.org/wiki/Main_Page
 * https://freesvg.org/
 * https://thenounproject.com/
+
+
+## Acknowledgements
+Template obtained from: https://github.com/nurRiyad/nuxt-blog
+
