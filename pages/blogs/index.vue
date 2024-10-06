@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { blogPostFromParsedContent } from '@/types/blog'
+
 const { data: blogPostsParsedContent } = await useAsyncData('home', () => queryContent('/blogs').sort({ _id: -1 }).find())
 
 const elementPerPage = ref(5)
@@ -8,7 +9,7 @@ const searchTest = ref('')
 
 const blogPosts = computed(() => {
   return blogPostsParsedContent.value?.map((blogPostParsedContent) => {
-    return blogPostFromParsedContent(blogPostParsedContent);
+    return blogPostFromParsedContent(blogPostParsedContent)
   })
 })
 
@@ -84,7 +85,10 @@ defineOgImage({
 
     <ClientOnly>
       <div class="space-y-5 my-5 px-4">
-        <template v-for="post in paginatedBlogPosts" :key="post.title">
+        <template
+          v-for="post in paginatedBlogPosts"
+          :key="post.title"
+        >
           <ArchiveCard
             :path="post.path"
             :title="post.metadata.title"
@@ -107,12 +111,26 @@ defineOgImage({
     </ClientOnly>
 
     <div class="flex justify-center items-center space-x-6 ">
-      <button :disabled="pageNumber <= 1" @click="onPreviousPageClick">
-        <Icon name="mdi:code-less-than" size="30" :class="{ 'text-sky-700 dark:text-sky-400': pageNumber > 1 }" />
+      <button
+        :disabled="pageNumber <= 1"
+        @click="onPreviousPageClick"
+      >
+        <Icon
+          name="mdi:code-less-than"
+          size="30"
+          :class="{ 'text-sky-700 dark:text-sky-400': pageNumber > 1 }"
+        />
       </button>
       <p>{{ pageNumber }} / {{ totalPage }}</p>
-      <button :disabled="pageNumber >= totalPage" @click="onNextPageClick">
-        <Icon name="mdi:code-greater-than" size="30" :class="{ 'text-sky-700 dark:text-sky-400': pageNumber < totalPage }" />
+      <button
+        :disabled="pageNumber >= totalPage"
+        @click="onNextPageClick"
+      >
+        <Icon
+          name="mdi:code-greater-than"
+          size="30"
+          :class="{ 'text-sky-700 dark:text-sky-400': pageNumber < totalPage }"
+        />
       </button>
     </div>
   </main>

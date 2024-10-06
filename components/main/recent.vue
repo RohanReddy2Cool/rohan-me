@@ -9,7 +9,7 @@ const { data: rawBlogPostsParsedContent } = await useAsyncData('recent-post', ()
 
 const blogPosts = computed(() => {
   return rawBlogPostsParsedContent.value?.map((blogPostParsedContent) => {
-    return blogPostFromParsedContent(blogPostParsedContent);
+    return blogPostFromParsedContent(blogPostParsedContent)
   })
 })
 
@@ -27,14 +27,21 @@ useHead({
 <template>
   <div class="pb-2 px-4">
     <div class="flex flex-row items-center space-x-3 pt-5 pb-3">
-      <Icon name="mdi:star-three-points-outline" size="2em" class="text-black dark:text-zinc-300  " />
+      <Icon
+        name="mdi:star-three-points-outline"
+        size="2em"
+        class="text-black dark:text-zinc-300  "
+      />
       <h2 class="text-4xl font-semibold text-black dark:text-zinc-300   ">
         Recent Post
       </h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <template v-for="post in blogPosts" :key="post.metadata.title">
+      <template
+        v-for="post in blogPosts"
+        :key="post.metadata.title"
+      >
         <BlogCard
           :path="post.path"
           :title="post.metadata.title"
@@ -49,7 +56,10 @@ useHead({
       </template>
     </div>
     <div class="group pt-5 px-4">
-      <NuxtLink to="/blogs" class="grid grid-cols-1 sm:grid-cols-10 gap-1">
+      <NuxtLink
+        to="/blogs"
+        class="grid grid-cols-1 sm:grid-cols-10 gap-1"
+      >
         <div class="flex group-hover:underline text-green-700 dark:text-green-400 items-center pt-2">
           <p>All posts</p>
           <LogoArrow />

@@ -12,7 +12,10 @@ defineProps<{
 
 <template>
   <article class="group border dark:border-gray-800  m-2 rounded-2xl overflow-hidden shadow-sm text-zinc-700 dark:text-zinc-300">
-    <NuxtLink :to="path" class="grid grid-cols-1 sm:grid-cols-10 gap-1">
+    <NuxtLink
+      :to="path"
+      class="grid grid-cols-1 sm:grid-cols-10 gap-1"
+    >
       <div class="sm:col-span-3">
         <NuxtImg
           class="h-full w-full object-cover object-center rounded-t-2xl sm:rounded-l-2xl sm:rounded-t-none shadow-lg group-hover:scale-[1.02] transition-all duration-500"
@@ -35,7 +38,10 @@ defineProps<{
           </div>
           <div class="flex items-center gap-1 flex-wrap">
             <LogoTag />
-            <p v-for="tag in tags" :key="tag">
+            <p
+              v-for="tag in tags"
+              :key="tag"
+            >
               {{ tag }}
             </p>
           </div>

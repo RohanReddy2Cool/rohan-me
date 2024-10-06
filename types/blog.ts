@@ -1,19 +1,19 @@
-import type { ParsedContent } from '@nuxt/content';
+import type { ParsedContent } from '@nuxt/content'
 
 export interface BlogPostMetadata {
-  published: boolean,
-  title: string,
-  date: string,
-  description: string,
-  image?: string,
-  alt?: string,
-  ogImage?: string,
-  tags: string[],
+  published: boolean
+  title: string
+  date: string
+  description: string
+  image?: string
+  alt?: string
+  ogImage?: string
+  tags: string[]
 }
 
 export interface BlogPost {
-  metadata: BlogPostMetadata,
-  path: string,
+  metadata: BlogPostMetadata
+  path: string
 }
 
 export function blogPostFromParsedContent(parsedContent: ParsedContent | null): BlogPost {
@@ -22,7 +22,7 @@ export function blogPostFromParsedContent(parsedContent: ParsedContent | null): 
       title: parsedContent?.title || 'no-title available',
       description: parsedContent?.description || 'no-description available',
       image: parsedContent?.image,
-      alt: parsedContent?.alt, 
+      alt: parsedContent?.alt,
       ogImage: parsedContent?.ogImage || parsedContent?.image,
       date: parsedContent?.date || 'not-date-available',
       tags: parsedContent?.tags || [],

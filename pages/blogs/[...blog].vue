@@ -8,7 +8,7 @@ const { path } = useRoute()
 const { data: blogPostParsedContent } = await useAsyncData(`blog-post-${path}`, () => queryContent(path).findOne())
 
 const blogPost = computed<BlogPost>(() => {
-  return blogPostFromParsedContent(blogPostParsedContent.value);
+  return blogPostFromParsedContent(blogPostParsedContent.value)
 })
 
 useHead({
@@ -76,12 +76,18 @@ defineOgImageComponent(blogPost.value.metadata.title, {
 </script>
 
 <template>
-  <div v-if="!blogPostParsedContent" class="py-5">
+  <div
+    v-if="!blogPostParsedContent"
+    class="py-5"
+  >
     <div class="container max-w-xl   mx-auto">
       <Logo404 />
     </div>
   </div>
-  <div v-else class="px-6 container max-w-5xl mx-auto sm:grid grid-cols-12 gap-x-12 ">
+  <div
+    v-else
+    class="px-6 container max-w-5xl mx-auto sm:grid grid-cols-12 gap-x-12 "
+  >
     <div class="col-span-12 lg:col-span-9">
       <BlogHeader
         :title="blogPost.metadata.title"

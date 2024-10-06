@@ -3,16 +3,28 @@
     <p class="text-black dark:text-zinc-300  text-base font-semibold">
       Quick Link
     </p>
-    <NuxtLink to="/" class="hover:underline">
+    <NuxtLink
+      to="/"
+      class="hover:underline"
+    >
       Home
     </NuxtLink>
-    <NuxtLink to="/blogs" class="hover:underline">
+    <NuxtLink
+      to="/blogs"
+      class="hover:underline"
+    >
       Blogs
     </NuxtLink>
-    <NuxtLink to="/categories" class="hover:underline">
+    <NuxtLink
+      to="/categories"
+      class="hover:underline"
+    >
       Categories
     </NuxtLink>
-    <NuxtLink to="/about" class="hover:underline">
+    <NuxtLink
+      to="/about"
+      class="hover:underline"
+    >
       About Me
     </NuxtLink>
   </div>

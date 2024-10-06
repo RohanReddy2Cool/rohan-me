@@ -20,10 +20,9 @@ const { data: blogPostParsedContent } = await useAsyncData(`category-data-${cate
     .find(),
 )
 
-
 const blogPosts = computed(() => {
   return blogPostParsedContent.value?.map((blogPostParsedContent) => {
-    return blogPostFromParsedContent(blogPostParsedContent);
+    return blogPostFromParsedContent(blogPostParsedContent)
   })
 })
 
@@ -54,8 +53,8 @@ defineOgImage({
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <BlogCard
         v-for="post in blogPosts"
-        :path="post.path"
         :key="post.metadata.title"
+        :path="post.path"
         :title="post.metadata.title"
         :date="post.metadata.date"
         :description="post.metadata.description"

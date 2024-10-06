@@ -17,16 +17,19 @@ import { footerData, linksData } from '~/data'
         class="p-2 bg-gray-300 text-gray-800 rounded-md dark:bg-sky-700 dark:text-[#F1F2F4]"
         aria-label="Github"
       >
-        <Icon name="fa:github" size="1em" />
+        <Icon
+          name="fa:github"
+          size="1em"
+        />
       </NuxtLink>
-      <!--NuxtLink
+      <!-- NuxtLink
         :to="linksData.linkedin"
         target="_blank"
         class="p-2 bg-gray-300 text-gray-800 rounded-md dark:bg-sky-700 dark:text-[#F1F2F4]"
         aria-label="LinkedIn"
       >
         <Icon name="fa:linkedin-square" size="1em" />
-      </NuxtLink-->
+      </NuxtLink -->
     </div>
   </div>
 </template>

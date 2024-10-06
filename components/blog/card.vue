@@ -1,13 +1,12 @@
 <script lang="ts" setup>
-
 defineProps<{
-  path: string,
-  title: string,
-  image?: string,
-  alt?: string,
-  description: string,
-  date: string,
-  tags: Array<string>,
+  path: string
+  title: string
+  image?: string
+  alt?: string
+  description: string
+  date: string
+  tags: Array<string>
 }>()
 </script>
 
@@ -28,7 +27,10 @@ defineProps<{
           </div>
           <div class="flex items-center gap-1 flex-wrap">
             <LogoTag />
-            <template v-for="tag in tags" :key="tag">
+            <template
+              v-for="tag in tags"
+              :key="tag"
+            >
               <span>{{ tag }}</span>
             </template>
           </div>

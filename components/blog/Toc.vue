@@ -12,7 +12,9 @@ const links = articles?.body?.toc?.links || []
         Table Of Content
       </h1>
       <NuxtLink
-        v-for="link in links" :key="link.id" :to="`#${link.id}`"
+        v-for="link in links"
+        :key="link.id"
+        :to="`#${link.id}`"
         class="block text-xs mb-3 hover:underline"
       >
         {{ link.text }}

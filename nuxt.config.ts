@@ -1,5 +1,4 @@
 import { navbarData, linksData } from './data'
-const path = require('path');
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -25,10 +24,6 @@ export default defineNuxtConfig({
     },
   },
 
-  typescript: {
-    strict: true,
-  },
-
   nitro: {
     prerender: {
       crawlLinks: true,
@@ -46,7 +41,8 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    'nuxt-icon',
+    '@nuxt/eslint',
+    '@nuxt/icon',
     '@nuxt/image',
     '@vueuse/nuxt',
     'nuxt-og-image',
@@ -67,14 +63,21 @@ export default defineNuxtConfig({
       remarkPlugins: {
         'remark-math': {
           singleDollarTextMath: false,
-        }
+        },
       },
       rehypePlugins: {
-        'rehype-mathjax/chtml' : {
+        'rehype-mathjax/chtml': {
           chtml: {
-            fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2'
+            fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2',
           },
         },
+      },
+    },
+  },
+
+  eslint: {
+    config: {
+      stylistic: {
       },
     },
   },

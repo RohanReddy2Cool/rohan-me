@@ -1,13 +1,14 @@
 <template>
-<svg
+  <svg
     id="svg2"
     viewBox="0 0 475.83 270.72"
-    height="256pt" width="256pt"
+    height="256pt"
+    width="256pt"
   >
-  <defs
+    <defs
       id="defs4"
     >
-    <linearGradient
+      <linearGradient
         id="linearGradient3294"
         y2="146.19"
         gradientUnits="userSpaceOnUse"
@@ -15,19 +16,18 @@
         y1="506.19"
         x1="-1086.3"
       >
-      <stop
+        <stop
           id="stop3283"
           style="stop-color:#FF0000"
           offset="0"
-      />
-      <stop
+        />
+        <stop
           id="stop3285"
           style="stop-color:#600000"
           offset="1"
-      />
-    </linearGradient
-    >
-    <linearGradient
+        />
+      </linearGradient>
+      <linearGradient
         id="linearGradient3296"
         y2=".16483"
         gradientUnits="userSpaceOnUse"
@@ -35,19 +35,18 @@
         y1="320.16"
         x1="462.36"
       >
-      <stop
+        <stop
           id="stop3277"
           style="stop-color:#600000"
           offset="0"
-      />
-      <stop
+        />
+        <stop
           id="stop3279"
           style="stop-color:#FF0000"
           offset="1"
-      />
-    </linearGradient
-    >
-    <linearGradient
+        />
+      </linearGradient>
+      <linearGradient
         id="linearGradient3298"
         y2="555.46"
         gradientUnits="userSpaceOnUse"
@@ -55,42 +54,38 @@
         y1="1118.3"
         x1="-240.5"
       >
-      <stop
+        <stop
           id="stop3261"
           style="stop-color:#600000"
           offset="0"
-      />
-      <stop
+        />
+        <stop
           id="stop3263"
           style="stop-color:#FF0000"
           offset="1"
-      />
-    </linearGradient
-    >
-  </defs
-  >
-  <g
+        />
+      </linearGradient>
+    </defs>
+    <g
       transform="translate(-35.546 -35.05)"
     >
-    <g
+      <g
         style="stroke:#000000;stroke-width:9.9372"
         transform="matrix(.19650 0 0 .19650 298.17 57.479)"
       >
-      <path
+        <path
           style="fill-rule:evenodd;stroke:#000000;stroke-width:9.9372;fill:url(#linearGradient3294)"
           d="m-674.29-21.924c-235.23 120.95-476.21 581.9-200 942.85-200.91-44.76-513.31-149.52-448.61-551.42 67.7-347.62 329.57-440.96 648.61-391.43z"
-      />
-      <path
+        />
+        <path
           style="fill-rule:evenodd;stroke:#000000;stroke-width:9.9372;fill:url(#linearGradient3296)"
           d="m-891.43-33.352c189.53-24.762 376.19-60.952 568.57-74.288 177.15-14.28 297.15 74.288 462.86 128.57 210.48 35.242 426.67 41.908 640 62.861 70.48 10.476 160.95 32.379 177.14 134.29-83.81 148.57-190.47 274.28-380 377.14-232.38-48.57-473.33-171.43-680-334.29-188.57-129.52-462.85-324.76-788.57-294.28z"
-      />
-      <path
+        />
+        <path
           style="fill-rule:evenodd;stroke:#000000;stroke-width:9.9372;fill:url(#linearGradient3298)"
           d="m-1117.1 832.36c169.48 103.81 436.15 287.64 514.24 322.84 332.38 155.3 924.76 130.5 1314.3-40 157.13-71.4 359.96-162.84 368.56-342.84-41-183.81-90.48-399.05-131.43-582.85-80.95 184.76-239.05 332.38-468.57 454.28-491.43 225.72-1071.4 422.81-1597.1 188.57z"
-      />
-    </g
-    >
-  </g
-  >
-</svg>
+        />
+      </g>
+    </g>
+  </svg>
 </template>
