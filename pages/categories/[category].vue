@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { blogPostFromParsedContent } from '@/types/blog'
+
 const route = useRoute()
 
 // take category from route params & make first char upper
@@ -12,25 +14,16 @@ const category = computed(() => {
   return strName
 })
 
-const { data } = await useAsyncData(`category-data-${category.value}`, () =>
+const { data: blogPostParsedContent } = await useAsyncData(`category-data-${category.value}`, () =>
   queryContent('/blogs')
     .where({ tags: { $contains: category.value } })
     .find(),
 )
 
-const formattedData = computed(() => {
-  return data.value?.map((articles) => {
-    return {
-      path: articles._path,
-      title: articles.title || 'no-title available',
-      description: articles.description || 'no-description available',
-      image: articles.image || '/blogs-img/blog.jpg',
-      alt: articles.alt || 'no alter data available',
-      ogImage: articles.ogImage || '/blogs-img/blog.jpg',
-      date: articles.date || 'not-date-available',
-      tags: articles.tags || [],
-      published: articles.published || false,
-    }
+
+const blogPosts = computed(() => {
+  return blogPostParsedContent.value?.map((blogPostParsedContent) => {
+    return blogPostFromParsedContent(blogPostParsedContent);
   })
 })
 
@@ -60,19 +53,19 @@ defineOgImage({
     <CategoryTopic />
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <BlogCard
-        v-for="post in formattedData"
-        :key="post.title"
+        v-for="post in blogPosts"
         :path="post.path"
-        :title="post.title"
-        :date="post.date"
-        :description="post.description"
-        :image="post.image"
-        :alt="post.alt"
-        :og-image="post.ogImage"
-        :tags="post.tags"
-        :published="post.published"
+        :key="post.metadata.title"
+        :title="post.metadata.title"
+        :date="post.metadata.date"
+        :description="post.metadata.description"
+        :image="post.metadata.image"
+        :alt="post.metadata.alt"
+        :og-image="post.metadata.ogImage"
+        :tags="post.metadata.tags"
+        :published="post.metadata.published"
       />
-      <BlogEmpty v-if="data?.length === 0" />
+      <BlogEmpty v-if="blogPosts?.length === 0" />
     </div>
   </main>
 </template>

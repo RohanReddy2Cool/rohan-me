@@ -19,5 +19,17 @@
     "spacegrotesk",
     "Tailwindcss",
     "vuex"
-  ]
+  ],
+  "search.exclude": {
+    "**/.git": true,
+    "**/.nuxt/": true,
+    "**/.output": true,
+    "**/node_modules/": true
+  },
+  "files.exclude": {
+    "**/.git/": true,
+    "**/.nuxt/": true,
+    "**/.output/": true,
+    "**/node_modules/": true
+  }
 }

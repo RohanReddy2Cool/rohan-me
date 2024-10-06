@@ -1,34 +1,23 @@
 <script setup lang="ts">
 import type { BlogPost } from '@/types/blog'
-import { navbarData, linksData } from '~/data'
+import { blogPostFromParsedContent } from '@/types/blog'
+import { navbarData, linksData, myData } from '~/data'
 
 const { path } = useRoute()
 
-const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () => queryContent(path).findOne())
+const { data: blogPostParsedContent } = await useAsyncData(`blog-post-${path}`, () => queryContent(path).findOne())
 
-if (error.value)
-  navigateTo('/404')
-
-const data = computed<BlogPost>(() => {
-  return {
-    title: articles.value?.title || 'no-title available',
-    description: articles.value?.description || 'no-description available',
-    image: articles.value?.image || '/not-found.jpg',
-    alt: articles.value?.alt || 'no alter data available',
-    ogImage: articles.value?.ogImage || '/not-found.jpg',
-    date: articles.value?.date || 'not-date-available',
-    tags: articles.value?.tags || [],
-    published: articles.value?.published || false,
-  }
+const blogPost = computed<BlogPost>(() => {
+  return blogPostFromParsedContent(blogPostParsedContent.value);
 })
 
 useHead({
-  title: data.value.title || '',
+  title: blogPost.value.metadata.title || '',
   meta: [
-    { name: 'description', content: data.value.description },
+    { name: 'description', content: blogPost.value.metadata.description },
     {
       name: 'description',
-      content: data.value.description,
+      content: blogPost.value.metadata.description,
     },
     // Test on: https://developers.facebook.com/tools/debug/ or https://socialsharepreview.com/
     { property: 'og:site_name', content: navbarData.homeTitle },
@@ -39,15 +28,15 @@ useHead({
     },
     {
       property: 'og:title',
-      content: data.value.title,
+      content: blogPost.value.metadata.title,
     },
     {
       property: 'og:description',
-      content: data.value.description,
+      content: blogPost.value.metadata.description,
     },
     {
       property: 'og:image',
-      content: data.value.ogImage || data.value.image,
+      content: blogPost.value.metadata.ogImage,
     },
     // Test on: https://cards-dev.twitter.com/validator or https://socialsharepreview.com/
     { name: 'twitter:site', content: '@qdnvubp' },
@@ -58,15 +47,15 @@ useHead({
     },
     {
       name: 'twitter:title',
-      content: data.value.title,
+      content: blogPost.value.metadata.title,
     },
     {
       name: 'twitter:description',
-      content: data.value.description,
+      content: blogPost.value.metadata.description,
     },
     {
       name: 'twitter:image',
-      content: data.value.ogImage || data.value.image,
+      content: blogPost.value.metadata.ogImage,
     },
   ],
   link: [
@@ -78,31 +67,35 @@ useHead({
 })
 
 // Generate OG Image
-defineOgImageComponent('Test', {
-  headline: 'Greetings 👋',
-  title: data.value.title || '',
-  description: data.value.description || '',
-  link: data.value.ogImage,
-
+defineOgImageComponent(blogPost.value.metadata.title, {
+  headline: myData.headline,
+  title: blogPost.value.metadata.title,
+  description: blogPost.value.metadata.description,
+  link: blogPost.value.metadata.ogImage,
 })
 </script>
 
 <template>
-  <div class="px-6 container max-w-5xl mx-auto sm:grid grid-cols-12 gap-x-12 ">
+  <div v-if="!blogPostParsedContent" class="py-5">
+    <div class="container max-w-xl   mx-auto">
+      <Logo404 />
+    </div>
+  </div>
+  <div v-else class="px-6 container max-w-5xl mx-auto sm:grid grid-cols-12 gap-x-12 ">
     <div class="col-span-12 lg:col-span-9">
       <BlogHeader
-        :title="data.title"
-        :image="data.image"
-        :alt="data.alt"
-        :date="data.date"
-        :description="data.description"
-        :tags="data.tags"
+        :title="blogPost.metadata.title"
+        :image="blogPost.metadata.image"
+        :alt="blogPost.metadata.alt"
+        :date="blogPost.metadata.date"
+        :description="blogPost.metadata.description"
+        :tags="blogPost.metadata.tags"
       />
       <div
         class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg
         prose-h1:no-underline max-w-5xl mx-auto prose-zinc dark:prose-invert prose-img:rounded-lg"
       >
-        <ContentRenderer v-if="articles" :value="articles">
+        <ContentRenderer :value="blogPostParsedContent">
           <template #empty>
             <p>No content found.</p>
           </template>

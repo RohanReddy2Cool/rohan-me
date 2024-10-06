@@ -1,37 +1,28 @@
 <script lang="ts" setup>
-const { data } = await useAsyncData('home', () => queryContent('/blogs').sort({ _id: -1 }).find())
+import { blogPostFromParsedContent } from '@/types/blog'
+const { data: blogPostsParsedContent } = await useAsyncData('home', () => queryContent('/blogs').sort({ _id: -1 }).find())
 
 const elementPerPage = ref(5)
 const pageNumber = ref(1)
 const searchTest = ref('')
 
-const formattedData = computed(() => {
-  return data.value?.map((articles) => {
-    return {
-      path: articles._path,
-      title: articles.title || 'no-title available',
-      description: articles.description || 'no-description available',
-      image: articles.image || '/not-found.jpg',
-      alt: articles.alt || 'no alter data available',
-      ogImage: articles.ogImage || '/not-found.jpg',
-      date: articles.date || 'not-date-available',
-      tags: articles.tags || [],
-      published: articles.published || false,
-    }
-  }) || []
+const blogPosts = computed(() => {
+  return blogPostsParsedContent.value?.map((blogPostParsedContent) => {
+    return blogPostFromParsedContent(blogPostParsedContent);
+  })
 })
 
-const searchData = computed(() => {
-  return formattedData.value.filter((data) => {
-    const lowerTitle = data.title.toLocaleLowerCase()
+const searchedBlogPosts = computed(() => {
+  return blogPosts.value?.filter((blogPost) => {
+    const lowerTitle = blogPost.metadata.title.toLocaleLowerCase()
     if (lowerTitle.search(searchTest.value) !== -1)
       return true
     else return false
   }) || []
 })
 
-const paginatedData = computed(() => {
-  return searchData.value.filter((data, idx) => {
+const paginatedBlogPosts = computed(() => {
+  return searchedBlogPosts.value.filter((blogPost, idx) => {
     const startInd = ((pageNumber.value - 1) * elementPerPage.value)
     const endInd = (pageNumber.value * elementPerPage.value) - 1
 
@@ -47,7 +38,7 @@ function onPreviousPageClick() {
 }
 
 const totalPage = computed(() => {
-  const ttlContent = searchData.value.length || 0
+  const ttlContent = searchedBlogPosts.value.length || 0
   const totalPage = Math.ceil(ttlContent / elementPerPage.value)
   return totalPage
 })
@@ -92,26 +83,20 @@ defineOgImage({
     </div>
 
     <ClientOnly>
-      <div v-auto-animate class="space-y-5 my-5 px-4">
-        <template v-for="post in paginatedData" :key="post.title">
+      <div class="space-y-5 my-5 px-4">
+        <template v-for="post in paginatedBlogPosts" :key="post.title">
           <ArchiveCard
             :path="post.path"
-            :title="post.title"
-            :date="post.date"
-            :description="post.description"
-            :image="post.image"
-            :alt="post.alt"
-            :og-image="post.ogImage"
-            :tags="post.tags"
-            :published="post.published"
+            :title="post.metadata.title"
+            :date="post.metadata.date"
+            :description="post.metadata.description"
+            :image="post.metadata.image"
+            :alt="post.metadata.alt"
+            :og-image="post.metadata.ogImage"
+            :tags="post.metadata.tags"
+            :published="post.metadata.published"
           />
         </template>
-
-        <ArchiveCard
-          v-if="paginatedData.length <= 0"
-          title="No Post Found"
-          image="/not-found.jpg"
-        />
       </div>
 
       <template #fallback>

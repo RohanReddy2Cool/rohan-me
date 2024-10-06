@@ -1,31 +1,17 @@
 <script lang="ts" setup>
-interface Props {
-  path?: string
-  title?: string
-  date?: string
-  description?: string
+defineProps<{
+  path: string
+  title: string
   image?: string
   alt?: string
-  ogImage?: string
-  tags?: Array<string>
-  published?: boolean
-}
-
-withDefaults(defineProps<Props>(), {
-  path: '/',
-  title: 'no-title',
-  date: 'no-date',
-  description: 'no-description',
-  image: '/blogs-img/blog.jpg',
-  alt: 'no-alt',
-  ogImage: '/blogs-img/blog.jpg',
-  tags: () => [],
-  published: false,
-})
+  description?: string
+  date?: string
+  tags: Array<string>
+}>()
 </script>
 
 <template>
-  <article class="group border dark:border-gray-800  m-2 rounded-2xl overflow-hidden shadow-sm text-zinc-700 dark:text-zinc-300  ">
+  <article class="group border dark:border-gray-800  m-2 rounded-2xl overflow-hidden shadow-sm text-zinc-700 dark:text-zinc-300">
     <NuxtLink :to="path" class="grid grid-cols-1 sm:grid-cols-10 gap-1">
       <div class="sm:col-span-3">
         <NuxtImg

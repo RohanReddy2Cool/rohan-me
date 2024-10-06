@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { navbarData, headData } from '~/data'
+import { navbarData, headData, myData } from '~/data'
 
 useHead({
   title: 'Home',
@@ -13,10 +13,10 @@ useHead({
 
 // Generate OG Image
 defineOgImageComponent('About', {
-  headline: 'Greetings 👋',
+  headline: myData.headline,
   title: navbarData.homeTitle,
-  description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
-  link: '/rohan.jpeg',
+  description: myData.description,
+  link: myData.image,
 })
 </script>
 
@@ -24,6 +24,5 @@ defineOgImageComponent('About', {
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <MainHero />
     <MainRecent />
-    <MainTrending />
   </main>
 </template>

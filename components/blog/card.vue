@@ -1,27 +1,14 @@
 <script lang="ts" setup>
-interface Props {
-  path: string
-  title: string
-  date: string
-  description: string
-  image: string
-  alt: string
-  ogImage: string
-  tags: Array<string>
-  published: boolean
-}
 
-withDefaults(defineProps<Props>(), {
-  path: '/',
-  title: 'no-title',
-  date: 'no-date',
-  description: 'no-description',
-  image: '/blogs-img/blog.jpg',
-  alt: 'no-alt',
-  ogImage: '/blogs-img/blog.jpg',
-  tags: () => [],
-  published: false,
-})
+defineProps<{
+  path: string,
+  title: string,
+  image?: string,
+  alt?: string,
+  description: string,
+  date: string,
+  tags: Array<string>,
+}>()
 </script>
 
 <template>

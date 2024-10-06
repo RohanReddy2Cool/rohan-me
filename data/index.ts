@@ -3,7 +3,8 @@ export const myData = {
   fullName: 'Rohan R. Reddy',
   title: 'Rohan Reddy\'s Blog on robotics related topics',
   image: 'https://rohanr.me/rohan.jpeg',
-  description: 'Rohan Reddy, student at Iron Horse Middle school, learning about robotics.',
+  description: 'Rohan Reddy, student at Iron Horse Middle school, interested in robotics.',
+  headline: 'Greetings 👋, from Rohan Reddy'
 }
 
 export const navbarData = {
