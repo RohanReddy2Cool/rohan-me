@@ -36,6 +36,9 @@ npm run deploy
 * https://freesvg.org/
 * https://thenounproject.com/
 
+### Icons
+https://icones.js.org/
+
 
 ## Acknowledgements
 Template obtained from: https://github.com/nurRiyad/nuxt-blog

@@ -2,7 +2,7 @@ export const myData = {
   name: 'Rohan Reddy',
   fullName: 'Rohan R. Reddy',
   title: 'Rohan Reddy\'s Blog on robotics related topics',
-  image: 'https://rohanr.me/rohan.jpeg',
+  image: '/rohan.jpeg',
   description: 'Rohan Reddy, student at Iron Horse Middle school, interested in robotics.',
   headline: 'Greetings 👋, from Rohan Reddy',
 }

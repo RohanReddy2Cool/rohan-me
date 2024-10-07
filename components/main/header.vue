@@ -46,7 +46,7 @@ function onClick(val: string) {
               @click="onClick('dark')"
             >
               <Icon
-                name="icon-park:moon"
+                name="icon-park-solid:moon"
                 size="20"
               />
             </button>
@@ -58,14 +58,14 @@ function onClick(val: string) {
               @click="onClick('light')"
             >
               <Icon
-                name="noto:sun"
+                name="icon-park-solid:sun-one"
                 size="20"
               />
             </button>
             <template #fallback>
               <!-- this will be rendered on server side -->
               <Icon
-                name="svg-spinners:180-ring"
+                name="icon-park-solid:star"
                 size="20"
               />
             </template>

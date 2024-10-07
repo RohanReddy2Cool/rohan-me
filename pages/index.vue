@@ -12,12 +12,12 @@ useHead({
 })
 
 // Generate OG Image
-defineOgImageComponent('About', {
-  headline: myData.headline,
-  title: navbarData.homeTitle,
-  description: myData.description,
-  link: myData.image,
-})
+// defineOgImageComponent('About', {
+//   headline: myData.headline,
+//   title: navbarData.homeTitle,
+//   description: myData.description,
+//   link: myData.image,
+// })
 </script>
 
 <template>

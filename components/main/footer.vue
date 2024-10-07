@@ -16,7 +16,7 @@ const path = computed(() => route.fullPath.replace('/', ''))
 
       <div class="border-t dark:border-gray-800 mt-5 text-center p-2">
         © 2024 - {{ new Date().getFullYear() }} All Rights reserved.
-        <a href="/rss.xml"> <span class="px-3"><Icon name="bi:rss-fill" /></span></a>
+        <a href="/rss.xml"> <span class="px-3"><Icon name="fa6-solid:rss" /></span></a>
       </div>
     </div>
   </div>

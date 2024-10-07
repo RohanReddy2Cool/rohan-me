@@ -11,12 +11,12 @@ useHead({
   ],
 })
 
-defineOgImageComponent('About', {
-  headline: myData.headline,
-  title: navbarData.homeTitle,
-  description: myData.description,
-  link: myData.image,
-})
+// defineOgImageComponent('About', {
+//   headline: myData.headline,
+//   title: navbarData.homeTitle,
+//   description: myData.description,
+//   link: myData.image,
+// })
 </script>
 
 <template>
@@ -33,11 +33,11 @@ defineOgImageComponent('About', {
               <NuxtLink
                 :to="linksData.github"
                 target="_blank"
-                class="px-2 py-1 lg:px-3 lg:py-2 bg-gray-300 text-gray-800 rounded-md dark:bg-slate-700 dark:text-[#F1F2F4]"
+                class="p-2 bg-gray-300 text-gray-800 rounded-md dark:bg-sky-700 dark:text-[#F1F2F4]"
                 aria-label="Github"
               >
                 <Icon
-                  name="fa:github"
+                  name="fa6-brands:github"
                   size="1em"
                 />
               </NuxtLink>
@@ -47,7 +47,7 @@ defineOgImageComponent('About', {
                 class="px-2 py-1 lg:px-3 lg:py-2 bg-gray-300 text-gray-800 rounded-md dark:bg-slate-700 dark:text-[#F1F2F4]"
                 aria-label="LinkedIn"
               >
-                <Icon name="fa:linkedin-square" size="1em" />
+                <Icon name="fa6-brands:linkedin" size="1em" />
               </NuxtLink -->
             </div>
           </div>

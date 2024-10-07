@@ -67,12 +67,12 @@ useHead({
 })
 
 // Generate OG Image
-defineOgImageComponent(blogPost.value.metadata.title, {
-  headline: myData.headline,
-  title: blogPost.value.metadata.title,
-  description: blogPost.value.metadata.description,
-  link: blogPost.value.metadata.ogImage,
-})
+// defineOgImageComponent('About', {
+//   headline: myData.headline,
+//   title: blogPost.value.metadata.title,
+//   description: blogPost.value.metadata.description,
+//   link: blogPost.value.metadata.ogImage,
+// })
 </script>
 
 <template>

@@ -28,7 +28,7 @@ useHead({
   <div class="pb-2 px-4">
     <div class="flex flex-row items-center space-x-3 pt-5 pb-3">
       <Icon
-        name="mdi:star-three-points-outline"
+        name="fa6-solid:infinity"
         size="2em"
         class="text-black dark:text-zinc-300  "
       />

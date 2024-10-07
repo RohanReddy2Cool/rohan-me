@@ -116,7 +116,7 @@ defineOgImage({
         @click="onPreviousPageClick"
       >
         <Icon
-          name="mdi:code-less-than"
+          name="fa6-solid:less-than"
           size="30"
           :class="{ 'text-sky-700 dark:text-sky-400': pageNumber > 1 }"
         />
@@ -127,7 +127,7 @@ defineOgImage({
         @click="onNextPageClick"
       >
         <Icon
-          name="mdi:code-greater-than"
+          name="fa6-solid:greater-than"
           size="30"
           :class="{ 'text-sky-700 dark:text-sky-400': pageNumber < totalPage }"
         />

@@ -2,6 +2,21 @@ import { navbarData, linksData } from './data'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@vueuse/nuxt',
+    'nuxt-og-image',
+    '@nuxt/content',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/fontaine',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/tailwindcss',
+    '@stefanobartoletti/nuxt-social-share',
+  ],
+
   app: {
     head: {
       charset: 'utf-16',
@@ -40,20 +55,11 @@ export default defineNuxtConfig({
     fallback: 'light',
   },
 
-  modules: [
-    '@nuxt/eslint',
-    '@nuxt/icon',
-    '@nuxt/image',
-    '@vueuse/nuxt',
-    'nuxt-og-image',
-    '@nuxt/content',
-    '@nuxtjs/robots',
-    '@nuxtjs/sitemap',
-    '@nuxtjs/fontaine',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/tailwindcss',
-    '@stefanobartoletti/nuxt-social-share',
-  ],
+  icon: {
+    clientBundle: {
+      scan: true,
+    },
+  },
 
   content: {
     highlight: {
