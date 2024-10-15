@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { blogPostFromParsedContent } from '@/types/blog'
+import { blogPostFromParsedContent } from '~/utils/blog'
 
 const route = useRoute()
 
@@ -17,6 +17,7 @@ const category = computed(() => {
 const { data: blogPostParsedContent } = await useAsyncData(`category-data-${category.value}`, () =>
   queryContent('/blogs')
     .where({ tags: { $contains: category.value } })
+    .sort({ date: -1 })
     .find(),
 )
 

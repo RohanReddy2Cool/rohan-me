@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { headData } from '~/data'
-import { blogPostFromParsedContent } from '@/types/blog'
+import { blogPostFromParsedContent } from '~/utils/blog'
 
 // Get Last 6 Publish Post from the content/blog directory
 const { data: rawBlogPostsParsedContent } = await useAsyncData('recent-post', () =>
-  queryContent('/blogs').limit(12).sort({ _id: -1 }).find(),
+  queryContent('/blogs').limit(12).sort({ date: -1 }).find(),
 )
 
 const blogPosts = computed(() => {

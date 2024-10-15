@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { blogPostFromParsedContent } from '@/types/blog'
+import { blogPostFromParsedContent } from '~/utils/blog'
 
-const { data: blogPostsParsedContent } = await useAsyncData('home', () => queryContent('/blogs').sort({ _id: -1 }).find())
+const { data: blogPostsParsedContent } = await useAsyncData('home', () => queryContent('/blogs').sort({ date: -1 }).find())
 
 const elementPerPage = ref(5)
 const pageNumber = ref(1)

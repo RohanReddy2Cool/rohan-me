@@ -17,6 +17,17 @@ export interface BlogPost {
 }
 
 export function blogPostFromParsedContent(parsedContent: ParsedContent | null): BlogPost {
+  let date
+  try {
+    console.log(parsedContent?.date)
+    date = new Date(parsedContent?.date).toLocaleDateString(
+      undefined,
+      { timeZone: 'UTC', month: 'short', year: 'numeric', day: 'numeric' },
+    )
+  }
+  catch {
+    date = 'not-date-available'
+  }
   return {
     metadata: {
       title: parsedContent?.title || 'no-title available',
@@ -24,7 +35,7 @@ export function blogPostFromParsedContent(parsedContent: ParsedContent | null): 
       image: parsedContent?.image,
       alt: parsedContent?.alt,
       ogImage: parsedContent?.ogImage || parsedContent?.image,
-      date: parsedContent?.date || 'not-date-available',
+      date,
       tags: parsedContent?.tags || [],
       published: !!parsedContent?.published,
     },

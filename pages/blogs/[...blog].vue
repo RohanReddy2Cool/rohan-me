@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { BlogPost } from '@/types/blog'
-import { blogPostFromParsedContent } from '@/types/blog'
-import { navbarData, linksData, myData } from '~/data'
+import type { BlogPost } from '~/utils/blog'
+import { blogPostFromParsedContent } from '~/utils/blog'
+import { navbarData, linksData } from '~/data'
 
 const { path } = useRoute()
 
