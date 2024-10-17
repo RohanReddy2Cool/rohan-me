@@ -19,7 +19,6 @@ export interface BlogPost {
 export function blogPostFromParsedContent(parsedContent: ParsedContent | null): BlogPost {
   let date
   try {
-    console.log(parsedContent?.date)
     date = new Date(parsedContent?.date).toLocaleDateString(
       undefined,
       { timeZone: 'UTC', month: 'short', year: 'numeric', day: 'numeric' },
